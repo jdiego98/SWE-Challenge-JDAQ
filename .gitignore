@@ -1,4 +1,8 @@
 zincsearch/data/
+zincsearch/querys.json
+
 docker/
 
 Docker-compose.yml
+
+launch.json
