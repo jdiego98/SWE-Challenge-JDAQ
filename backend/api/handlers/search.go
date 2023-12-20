@@ -111,7 +111,7 @@ func SearchInZinc(searchBody []byte, username, password string) ([]models.Email,
 	var emails []models.Email
 	for _, hit := range searchResults.Hits.Hits {
 
-		bodyString, err := json.Marshal(hit.Source.Body)
+		// bodyString, err := json.Marshal(hit.Source.Body)
 
 		if err != nil {
 			return nil, err
@@ -124,7 +124,8 @@ func SearchInZinc(searchBody []byte, username, password string) ([]models.Email,
 			Subject:   hit.Source.Subject,
 			To:        hit.Source.To,
 			MessageID: hit.Source.MessageID,
-			Body:      string(bodyString),
+			// Body:      string(bodyString),
+			Body: hit.Source.Body,
 		}
 
 		emails = append(emails, email)

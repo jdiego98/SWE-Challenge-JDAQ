@@ -6,6 +6,21 @@ Se creo un contenedor en docker para correr zincsearch, ademas se crea un volume
 docker run -v %cd%/data:/data -e ZINC_DATA_PATH="/data" -p 4080:4080 -e ZINC_FIRST_ADMIN_USER=admin -e ZINC_FIRST_ADMIN_PASSWORD=Complexpass#123 --name zincsearch public.ecr.aws/zinclabs/zincsearch:latest
 
 
+
+### Indexer 
+
+Comando para generar el .exe:
+
+    go build -o indexer.exe     
+
+
+Comando para indexar:
+
+    indexer path_a_la_bd
+
+    indexer ../../../enron_mail_20110402/maildir/allen-p/_sent_mail  // Ejemplo
+
+
 # Rest API (GO)
 
 El api es muy simple y se basa en que el usuario podrá realizar busquedas utilizando tres parámetros: emisor del emial, receptor del email, y titulo del email, los tres son opcionales. Zincsearch hara el match de los correos que cumplan con los filtros escritos. 

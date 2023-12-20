@@ -17,7 +17,7 @@ type Email struct {
 	From      string
 	To        string
 	Subject   string
-	Body      strings.Builder
+	Body      string
 }
 
 func main() {
@@ -78,7 +78,7 @@ func visit(path string, f os.FileInfo, err error) error {
 				assignEmailField(&email, parts[0], parts[1])
 			}
 		} else {
-			email.Body.WriteString(line + "\n")
+			email.Body += line + "\n"
 		}
 	}
 

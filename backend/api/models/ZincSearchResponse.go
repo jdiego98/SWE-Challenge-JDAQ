@@ -18,11 +18,11 @@ type ZincSearchResponse struct {
 }
 
 type EmailDetail struct {
-	Timestamp string                 `json:"@timestamp"`
-	Body      map[string]interface{} `json:"Body"`
-	Date      string                 `json:"Date"`
-	From      string                 `json:"From"`
-	MessageID string                 `json:"MessageID"`
-	Subject   string                 `json:"Subject"`
-	To        string                 `json:"To"`
+	Timestamp string `json:"@timestamp"`
+	Body      string `json:"Body"`
+	Date      string `json:"Date"`
+	From      string `json:"From"`
+	MessageID string `json:"MessageID"`
+	Subject   string `json:"Subject"`
+	To        string `json:"To"`
 }
